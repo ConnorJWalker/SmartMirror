@@ -1,0 +1,17 @@
+{
+  "name": "smartmirror",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[A\u001b[B",
+  "scripts": {
+    "start": "electron build/index.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Connor Walker",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^9.0.2"
+  }
+}
