@@ -1,20 +1,9 @@
-import { app, BrowserWindow } from 'electron'
-import * as path from 'path'
+import { app } from 'electron'
+import { MainWindow } from './windows/main'
 
-let mainWindow: BrowserWindow | null
+const mainWindow = new MainWindow()
 
-function createWindow() : void {
-    mainWindow = new BrowserWindow({
-        height: 600,
-        width: 800
-    })
-
-    mainWindow.loadFile(path.join(__dirname, '../static/index.html'))
-
-    mainWindow.on('closed', () => { mainWindow = null })
-}
-
-app.on('ready', createWindow)
+app.on('ready', () => mainWindow.createWindow())
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin')
@@ -22,6 +11,6 @@ app.on('window-all-closed', () => {
 })
 
 app.on('activate', () => {
-    if (mainWindow === null)
-        createWindow()
+    if (mainWindow.window === null)
+        mainWindow.createWindow()
 })
