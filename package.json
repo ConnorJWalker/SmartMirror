@@ -12,6 +12,6 @@
   "author": "Connor Walker",
   "license": "ISC",
   "dependencies": {
-    "electron": "^9.0.2"
+    "electron": "^13.6.6"
   }
 }
